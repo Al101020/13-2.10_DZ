@@ -15,6 +15,6 @@ const bodyTimeline = document.createElement('div');
 bodyTimeline.setAttribute('id', 'bodyTimeline');
 divTimeline.appendChild(bodyTimeline);
 
-const divCreatingPosts = document.createElement('div');
+const divCreatingPosts = document.createElement('form');
 divCreatingPosts.setAttribute('id', 'divCreatingPosts');
 divTimeline.appendChild(divCreatingPosts);

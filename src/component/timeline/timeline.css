@@ -3,9 +3,6 @@
     min-height: 50px;
 
     margin: 20px 50px;
-
-    border: 1px solid black;
-    border-radius: 5px;
 }
 
 #titleTimeline {
@@ -13,6 +10,9 @@
     height: 20px;
     color: white;
     padding-left: 50px;
+
+    border: 1px solid black;
+    /* border-radius: 5px; */
 }
 
 #bodyTimeline {
@@ -24,5 +24,8 @@
 #divCreatingPosts {
     background-color: white;
     min-height: 30px;
-    padding: 5px;
+    padding: 0px 5px;
+    
+    border: 1px solid black;
+    /* border-radius: 5px; */
 }
