@@ -1,4 +1,6 @@
 import './timelineCreatingPosts.css';
+// import geolocation from './geolocation';
+// import {sayHello} from "./message.js"; // пример из интернета
 
 const divCreatingPosts = document.querySelector('#divCreatingPosts');
 const divBodyTimeline = document.querySelector('#bodyTimeline');
@@ -47,11 +49,9 @@ function timeDate(date) {
 const intutText = document.createElement('input');
 intutText.id = 'intutText';
 intutText.type = 'text';
-intutText.addEventListener('keypress', (e) => {
+intutText.addEventListener('keypress', async (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-    // console.log(intutText.value);
-    // console.log(divBodyTimeline);
 
     const divPost = document.createElement('div');
     divPost.classList.add('divPost');
@@ -69,7 +69,19 @@ intutText.addEventListener('keypress', (e) => {
 
     const geoPosition = document.createElement('div');
     geoPosition.classList.add('geoPosition');
-    geoPosition.textContent = 'Геопозиции';
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (data) => {
+          const { latitude, longitude } = data.coords;
+          geoPosition.textContent = `[${latitude}, ${longitude}]`;
+        },
+        () => {
+          console.log('нужно выводить модальное окно');
+        },
+        { enableHighAccuracy: true },
+      );
+    }
+
     divPost.appendChild(geoPosition);
 
     divBodyTimeline.appendChild(divPost);

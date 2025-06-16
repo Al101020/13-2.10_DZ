@@ -23,3 +23,7 @@ git status
 git add -A
 git commit -m "commit-0.00"
 git ppush
+
+---
+
+что-то ещё
