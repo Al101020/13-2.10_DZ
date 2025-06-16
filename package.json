@@ -40,7 +40,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "md-converter": "^1.0.3",
-    "core-js": "^3.6.4"
+    "core-js": "^3.6.4",
+    "url-loader": "^4.1.1"
   }
 }

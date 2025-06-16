@@ -29,6 +29,10 @@ input[type="text"] {
   border-radius: 50%;
   cursor: pointer;
   /* background-image: url('vidKam.png'); */
+  background-image: url('./png/kam.png');
+  background-position: center center;
+  background-size: contain;
+  /* background-image: url(../../pic/goblin.png); */
 
   position: absolute;
  }
@@ -41,6 +45,35 @@ input[type="text"] {
   border: 1px solid black;
   border-radius: 50%;
   cursor: pointer;
+  background-image: url('./png/mic.png');
+  background-position: center center;
+    /* background-repeat: no-repeat; */
+  background-size: contain;
+    /* background-color: blue; */
 
   position: absolute;
+ }
+
+ .divPost {
+  background-color: white;
+  margin: 2px 5px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+
+  padding: 2px 5px;
+ }
+
+ .postDateTime {
+  display: flex;
+  justify-content: end;
+  font-size: 10px;
+  color: gray;
+ }
+ 
+ .geoPosition {
+  font-size: 10px;
+  margin: 10px 0 0 0;
+  padding: 0 0 0 10px;
+  color: gray;
  }
