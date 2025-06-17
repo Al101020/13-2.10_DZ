@@ -32,6 +32,17 @@ export default function modal() {
   const inputModal = document.createElement('input');
   inputModal.setAttribute('id', 'inputModal');
   inputModal.setAttribute('type', 'text');
+  // inputModal.addEventListener('keypress', (e) => {
+  //   const infoModal = body.querySelector('#infoModal');
+  //   console.log(infoModal);
+  //   if (e.key && e.key !== 'Enter') {
+  //     e.preventDefault();
+  //     infoModal.textContent = '';
+  //   } else if (infoModal.textContent !== '') {
+  //     e.preventDefault();
+  //     infoModal.textContent = '';
+  //   }
+  // });
   divInputModal.appendChild(inputModal);
   modal_.appendChild(divInputModal);
 
@@ -69,9 +80,15 @@ export default function modal() {
     if (valueModalInput === '') { // infoModal
       // const infoModal = body.querySelector('#infoModal');
       infoModal.textContent = 'поле пустое';
-      return;
+    } else {
+      const bodyTimeline = body.querySelector('#bodyTimeline');
+      bodyTimeline.lastChild.children[2].textContent = valueModalInput;
+      const modalFullScreen = body.querySelector('#full-screen');
+      modalFullScreen.remove();// удаляем модальное после нажатия Ок
+      const modalDiv = body.querySelector('#div-modal');
+      modalDiv.remove();// удаляем модальное после нажатия Ок
     }
-    console.log(valueModalInput);
+    // console.log(valueModalInput);
 
     // console.log('Click кнопка Ок');
   });
