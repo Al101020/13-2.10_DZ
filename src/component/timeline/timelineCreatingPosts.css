@@ -1,26 +1,24 @@
 #intutText {
   display: inline-block;
-  /* margin: auto 0;
-  border: 1px solid rgb(251, 251, 251); */
 }
 
 input[type="text"] {
-    border: 1px solid rgb(251, 251, 251); /* //цвет рамки */
-    /* border-radius: 3px; //закругление углов (общее) */
-    /* -webkit-border-radius: 3px; //закругление углов (Google Chrome) */
-    /* -moz-border-radius: 3px; //закругление углов (FireFox) */
-    /* -khtml-border-radius: 3px; //закругление углов (Safari) */
-    background: #ffffff !important; /* // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым */
-    outline: none; /* // удаляет обводку в браузерах хром(желтая) и сафари(синяя) */
-    /* height: 24px; // высота на свое усмотрение */
-    min-height: 30px;
-    width: 300px; /* // ширина на свое усмотрение */
-    color: black; /* //цвет шрифта в обычном состоянии */
-    font-size: 11px; /* // Размер шрифта */
-    font-family: Tahoma; /* // Стиль шрифта */
- }
+  border: 1px solid rgb(251, 251, 251); /* //цвет рамки */
+  /* border-radius: 3px; //закругление углов (общее) */
+  /* -webkit-border-radius: 3px; //закругление углов (Google Chrome) */
+  /* -moz-border-radius: 3px; //закругление углов (FireFox) */
+  /* -khtml-border-radius: 3px; //закругление углов (Safari) */
+  background: #ffffff !important; /* // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым */
+  outline: none; /* // удаляет обводку в браузерах хром(желтая) и сафари(синяя) */
+  /* height: 24px; // высота на свое усмотрение */
+  min-height: 30px;
+  width: 300px; /* // ширина на свое усмотрение */
+  color: black; /* //цвет шрифта в обычном состоянии */
+  font-size: 11px; /* // Размер шрифта */
+  font-family: Tahoma; /* // Стиль шрифта */
+}
 
- #btninputVideo {
+#btninputAudio {
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -28,16 +26,13 @@ input[type="text"] {
   border: 1px solid black;
   border-radius: 50%;
   cursor: pointer;
-  /* background-image: url('vidKam.png'); */
-  background-image: url('./png/kam.png');
+  background-image: url('./png/mic.png');
   background-position: center center;
   background-size: contain;
-  /* background-image: url(../../pic/goblin.png); */
-
   position: absolute;
- }
+}
 
- #btninputAudio {
+#btninputVideo {
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -45,35 +40,30 @@ input[type="text"] {
   border: 1px solid black;
   border-radius: 50%;
   cursor: pointer;
-  background-image: url('./png/mic.png');
+  background-image: url('./png/kam.png');
   background-position: center center;
-    /* background-repeat: no-repeat; */
   background-size: contain;
-    /* background-color: blue; */
-
   position: absolute;
- }
-
- .divPost {
+}
+ 
+.divPost {
   background-color: white;
   margin: 2px 5px;
-
   border: 1px solid black;
   border-radius: 5px;
-
   padding: 2px 5px;
- }
+}
 
- .postDateTime {
+.postDateTime {
   display: flex;
   justify-content: end;
   font-size: 10px;
   color: gray;
- }
+}
  
- .geoPosition {
+.geoPosition {
   font-size: 10px;
   margin: 10px 0 0 0;
   padding: 0 0 0 10px;
   color: gray;
- }
+}

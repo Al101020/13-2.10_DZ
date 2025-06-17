@@ -47,16 +47,12 @@ function timeDate(date) {
 // };
 
 // Добавляем текст
-const inputText = document.createElement('input');
-inputText.id = 'inputText';
-inputText.type = 'text';
-inputText.addEventListener('keypress', async (e) => {
+const intutText = document.createElement('input');
+intutText.id = 'intutText';
+intutText.type = 'text';
+intutText.addEventListener('keypress', async (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-
-    if (inputText.value === '') {
-      return;
-    }
 
     const divPost = document.createElement('div');
     divPost.classList.add('divPost');
@@ -65,10 +61,12 @@ inputText.addEventListener('keypress', async (e) => {
     postDateTime.classList.add('postDateTime');
     const date = new Date();
     postDateTime.textContent = timeDate(date);
+    divPost.appendChild(postDateTime);
 
     const postData = document.createElement('div');
     postData.classList.add('postData');
-    postData.textContent = inputText.value;
+    postData.textContent = intutText.value;
+    divPost.appendChild(postData);
 
     const geoPosition = document.createElement('div');
     geoPosition.classList.add('geoPosition');
@@ -79,27 +77,22 @@ inputText.addEventListener('keypress', async (e) => {
           geoPosition.textContent = `[${latitude}, ${longitude}]`;
         },
         () => {
-          modal();
-          // const geoloc = modal();
-          // console.log(geoloc);
+          const geoloc = modal();
+          console.log(geoloc);
         },
         { enableHighAccuracy: true },
       );
     }
 
-    divPost.appendChild(postDateTime);
-
-    divPost.appendChild(postData);
-
     divPost.appendChild(geoPosition);
 
     divBodyTimeline.appendChild(divPost);
 
-    inputText.value = '';
+    intutText.value = '';
   }
 });
 
-divCreatingPosts.appendChild(inputText);
+divCreatingPosts.appendChild(intutText);
 
 // Добавляем Аудио
 const btninputAudio = document.createElement('div');

@@ -1,0 +1,64 @@
+#full-screen {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  
+  top: 0;
+  left: 0;  /* display: none; */
+}
+
+#div-modal {
+  position: absolute;
+  top: 20%;
+  left: 30%;   /* left: calc(50% - 20px); */   /* padding: 100px auto; */
+}
+
+.modal {
+  position: absolute;
+  background-color: rgb(252, 252, 252);
+  /* background-color: rgb(200, 185, 202); */
+  width: 350px;
+  min-height: 100px;   /* top: 10%;   left: 50%; */
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 5px 15px 0  15px;   /* display: none; */
+}
+
+.displayNone {
+  display: none;
+}
+
+.p-modal {
+  margin: 10px 0;     /* padding: 0 auto; */    /* text-align: center; */
+}
+
+#divInputModal {
+  border: 2px solid #000;
+}
+
+#buttonsModal {
+  float: right;
+  width: 330px;
+  margin: 5px 0;
+}
+
+#infoModal {
+  display: inline-block;
+  width: 200px;
+  height: 25px;
+  /* border: 1px solid #000; */
+  color: red;
+}
+
+#buttonCancelModal {
+  margin: 5px 5px 5px 5px;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+
+#buttonOkModal {
+  margin: 5px 0px 5px 5px;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
