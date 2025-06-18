@@ -79,9 +79,7 @@ inputText.addEventListener('keypress', async (e) => {
           geoPosition.textContent = `[${latitude}, ${longitude}]`;
         },
         () => {
-          modal();
-          // const geoloc = modal();
-          // console.log(geoloc);
+          modal(); // const geoloc = modal();          // console.log(geoloc);
         },
         { enableHighAccuracy: true },
       );
@@ -93,7 +91,8 @@ inputText.addEventListener('keypress', async (e) => {
 
     divPost.appendChild(geoPosition);
 
-    divBodyTimeline.appendChild(divPost);
+    // divBodyTimeline.appendChild(divPost); // добавляет пост в конец элемента(divBodyTimeline)
+    divBodyTimeline.prepend(divPost); // добавляет пост в начало элемента(divBodyTimeline)
 
     inputText.value = '';
   }
