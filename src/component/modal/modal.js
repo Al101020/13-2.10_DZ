@@ -1,5 +1,5 @@
 import './modal.css';
-// import valueModalInputInvalid from './valueModalInputInvalid';
+import valueModalInputInvalid from './valueModalInputInvalid';
 
 export default function modal() {
   const body = document.querySelector('body');
@@ -77,32 +77,8 @@ export default function modal() {
   buttonOk.textContent = 'Ок';
 
   buttonOk.addEventListener('click', () => { // нажимаем на кнопку ОК
-    const valueModalInput = body.querySelector('#inputModal').value;
-    if (valueModalInput === '') {
-      infoModal.textContent = 'введите координаты широты и долготы через запятую';
-    } else {
-      // if (valueModalInputInvalid()) { // если значение поля Modal валидно
-      //   const bodyTimeline = body.querySelector('#bodyTimeline');
-      //   // bodyTimeline.lastChild.children[2].textContent = valueModalInput;
-      //   bodyTimeline.lastChild.children[2].textContent = `[${valueModalInput}]`;
-      // // `[${latitude}, ${longitude}]`
-      //   const modalFullScreen = body.querySelector('#full-screen');
-      //   modalFullScreen.remove();// удаляем модальное после нажатия Ок
-      //   const modalDiv = body.querySelector('#div-modal');
-      //   modalDiv.remove();// удаляем модальное после нажатия Ок
-      // } else { // если значение поля Modal валидно
-      //   // console.log('valueModalInputInvalid - работает значение должно быть валидным');
-      //   infoModal.textContent = 'Неправильно введены координаты';
-      // }
-      // // const bodyTimeline = body.querySelector('#bodyTimeline');
-      // // // bodyTimeline.lastChild.children[2].textContent = valueModalInput;
-      // // bodyTimeline.lastChild.children[2].textContent = `[${valueModalInput}]`;
-      // // // `[${latitude}, ${longitude}]`
-      // // const modalFullScreen = body.querySelector('#full-screen');
-      // // modalFullScreen.remove();// удаляем модальное после нажатия Ок
-      // // const modalDiv = body.querySelector('#div-modal');
-      // // modalDiv.remove();// удаляем модальное после нажатия Ок
-    }
+    // const valueModalInput = body.querySelector('#inputModal').value;
+    valueModalInputInvalid();
   });
 
   buttons.appendChild(buttonOk);
