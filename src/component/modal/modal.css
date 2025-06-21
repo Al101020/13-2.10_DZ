@@ -16,8 +16,7 @@
 
 .modal {
   position: absolute;
-  background-color: rgb(252, 252, 252);
-  /* background-color: rgb(200, 185, 202); */
+  background-color: rgb(252, 252, 252);  /* background-color: rgb(200, 185, 202); */
   width: 350px;
   min-height: 100px;   /* top: 10%;   left: 50%; */
   border: 1px solid #000;
@@ -46,8 +45,7 @@
 #infoModal {
   display: inline-block;
   width: 200px;
-  height: 25px;
-  /* border: 1px solid #000; */
+  height: 25px;  /* border: 1px solid #000; */
   color: red;
 }
 

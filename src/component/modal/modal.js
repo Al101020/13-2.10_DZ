@@ -33,17 +33,6 @@ export default function modal() {
   const inputModal = document.createElement('input');
   inputModal.setAttribute('id', 'inputModal');
   inputModal.setAttribute('type', 'text');
-  // inputModal.addEventListener('keypress', (e) => {
-  //   const infoModal = body.querySelector('#infoModal');
-  //   console.log(infoModal);
-  //   if (e.key && e.key !== 'Enter') {
-  //     e.preventDefault();
-  //     infoModal.textContent = '';
-  //   } else if (infoModal.textContent !== '') {
-  //     e.preventDefault();
-  //     infoModal.textContent = '';
-  //   }
-  // });
   divInputModal.appendChild(inputModal);
   modal_.appendChild(divInputModal);
 
@@ -64,11 +53,10 @@ export default function modal() {
     const modalDiv = body.querySelector('#div-modal');
     modalDiv.remove();// удаляем модальное после нажатия отмена
     const bodyTimeline = body.querySelector('#bodyTimeline');
-    const text = bodyTimeline.lastChild.children[1].textContent;
-    // console.log(text);// теперь нужно найти текстовое поле и вернуть текст поста(value)
+    const text = bodyTimeline.firstChild.children[1].textContent;
     const inputText = body.querySelector('#inputText');
     inputText.value = text; // вернули текст
-    bodyTimeline.removeChild(bodyTimeline.lastChild);// удаляем последний пост после нажатия отмена
+    bodyTimeline.removeChild(bodyTimeline.firstChild);// удаляем первый пост после нажатия отмена
   });
   buttons.appendChild(buttonCancel);
 
@@ -77,8 +65,21 @@ export default function modal() {
   buttonOk.textContent = 'Ок';
 
   buttonOk.addEventListener('click', () => { // нажимаем на кнопку ОК
-    // const valueModalInput = body.querySelector('#inputModal').value;
-    valueModalInputInvalid();
+    const result = valueModalInputInvalid();
+
+    if (result === undefined) {
+      return;
+    }
+
+    const bodyTimeline = body.querySelector('#bodyTimeline');
+    const firstElementBodyTimeline = bodyTimeline.firstChild;
+    const geoPosition = firstElementBodyTimeline.querySelector('.geoPosition');
+    geoPosition.textContent = `[ ${result[0]}, ${result[1]} ]`;
+
+    const modalFullScreen = body.querySelector('#full-screen');
+    modalFullScreen.remove();// удаляем модальное после нажатия отмена
+    const modalDiv = body.querySelector('#div-modal');
+    modalDiv.remove();// удаляем модальное после нажатия отмена
   });
 
   buttons.appendChild(buttonOk);
@@ -88,5 +89,7 @@ export default function modal() {
   divModal.appendChild(modal_);
   body.appendChild(divModal);
 
-  return 'выводим модальное окно';
+  // const valueModalInput = document.querySelector('#inputModal').value;
+
+  inputModal.focus();
 }

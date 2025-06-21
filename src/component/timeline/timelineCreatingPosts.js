@@ -1,50 +1,19 @@
 import './timelineCreatingPosts.css';
 import modal from '../modal/modal';
 
-// import {sayHello} from "./message.js"; // пример из интернета
-
 const divCreatingPosts = document.querySelector('#divCreatingPosts');
 const divBodyTimeline = document.querySelector('#bodyTimeline');
 
-function addZero(num) {
-  // функция - нули добавляет в дате и время
+function addZero(num) { // функция - нули добавляет в дате и время
   if (num >= 0 && num <= 9) {
     return `0${num}`;
   }
   return num;
 }
 
-function timeDate(date) {
-  // формируем Время и Дату
+function timeDate(date) { // формируем Время и Дату
   return ` ${addZero(date.getDate())}.${addZero(date.getMonth() + 1)}.${addZero(date.getFullYear())} ${addZero(date.getHours())}.${addZero(date.getMinutes())}`;
 }
-
-// function timeDate(date) { // было
-//   // формируем Время и Дату
-//   return `${addZero(date.getHours())}.${addZero(date.getMinutes())} ${addZero(date.getDate())}
-// .${addZero(
-//     date.getMonth() + 1,
-//   )}.${addZero(date.getFullYear())}`;
-// }
-
-// function createPost() {
-//   const divPost = document.createElement('div');
-//   divPost.classList.add('divPost');
-
-//   const postDateTime = document.createElement('div');
-//   postDateTime.classList.add('postDateTime');
-//   divPost.appendChild(postDateTime);
-
-//   const postData = document.createElement('div');
-//   postData.classList.add('postData');
-//   divPost.appendChild(postData);
-
-//   const geoPosition = document.createElement('div');
-//   geoPosition.classList.add('geoPosition');
-//   divPost.appendChild(geoPosition);
-
-//   divBodyTimeline.appendChild(divPost);
-// };
 
 // Добавляем текст
 const inputText = document.createElement('input');
@@ -79,9 +48,9 @@ inputText.addEventListener('keypress', async (e) => {
           geoPosition.textContent = `[${latitude}, ${longitude}]`;
         },
         () => {
-          modal(); // const geoloc = modal();          // console.log(geoloc);
+          modal(); // открываем модальное окно
         },
-        { enableHighAccuracy: true },
+        { enableHighAccuracy: true }, // более точное значение данных о местоположении
       );
     }
 

@@ -18,10 +18,8 @@ const regexLat = /^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}/;
 const regexLon = /^(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,18})?|-?180(?:\. 0{1,18})?)$/;
 
 function checklatlon(lat, lon) {
-  const validLat = regexLat.test(lat);
-  console.log(validLat);
-  const validLon = regexLon.test(lon);
-  console.log(validLon);
+  const validLat = regexLat.test(lat); // console.log(validLat);
+  const validLon = regexLon.test(lon); // console.log(validLon);
   return validLat && validLon;
 }
 
@@ -44,16 +42,12 @@ export default function valueModalInputValid() {
     let latitude = chars2Coord[0].replace(' ', '');
     let longitude = chars2Coord[1];
     // удаляем лишнее
-    latitude = latitude.replace(/[ ]/g, '').replace(/\[/g, '').replace(/\]/g, '');
-    longitude = longitude.replace(/[ ]/g, '').replace(/\[/g, '').replace(/\]/g, '');
-    // проверяем визуально
-    console.log(latitude);
-    console.log(longitude);
-    // проверяем как координаты это или нет
-    console.log('Пример проверки: ');
-    console.log(`${latitude}, ${longitude}`);
-    console.log(checklatlon(latitude, longitude));
-  } else {
-    console.log('теперь продолжаем: ИНАЧЕ');
+    latitude = latitude.replace(/[ ]/g, '').replace(/\[/g, '').replace(/\]/g, '').replace(/−/g, '-');
+    longitude = longitude.replace(/[ ]/g, '').replace(/\[/g, '').replace(/\]/g, '')
+      .replace(/−/g, '-'); // console.log(checklatlon(latitude, longitude));
+    if (checklatlon(latitude, longitude) === true) {
+      return [latitude, longitude];
+    }
+    infoModal.textContent = 'не правильно введена широта и(или) долгота';
   }
 }
