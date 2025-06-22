@@ -1,4 +1,5 @@
 import fixingItCoordinates from './fixingItCoordinates';
+
 let chars;
 
 function commaSearch() {
@@ -38,7 +39,7 @@ export default function valueModalInputValid() {
       infoModal.textContent = 'запятая не одна';
       return;
     }
-    infoModal.textContent = 'есть запятая';     // console.log(valueModalInput);
+    infoModal.textContent = 'есть запятая'; // console.log(valueModalInput);
     // // исправляем координаты: удаляем лишнее и т.д.
     const latLon = fixingItCoordinates(valueModalInput);
     // проверяем если это координаты
