@@ -65,7 +65,9 @@ export default function modal() {
   buttonOk.textContent = 'Ок';
 
   buttonOk.addEventListener('click', () => { // нажимаем на кнопку ОК
-    const result = valueModalInputInvalid();
+    // const result = valueModalInputInvalid();
+    // console.log(inputModal.value);
+    const result = valueModalInputInvalid(inputModal.value);
 
     if (result === undefined) {
       return;
@@ -89,7 +91,5 @@ export default function modal() {
   divModal.appendChild(modal_);
   body.appendChild(divModal);
 
-  // const valueModalInput = document.querySelector('#inputModal').value;
-
-  inputModal.focus();
+  inputModal.focus(); // переводим фокус на модальное окно
 }

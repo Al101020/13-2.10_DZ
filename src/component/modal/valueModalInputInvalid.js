@@ -1,3 +1,4 @@
+import fixingItCoordinates from './fixingItCoordinates';
 let chars;
 
 function commaSearch() {
@@ -37,16 +38,15 @@ export default function valueModalInputValid() {
       infoModal.textContent = 'запятая не одна';
       return;
     }
-    infoModal.textContent = 'есть запятая';
-    const chars2Coord = valueModalInput.split(','); // массив из 2 чисел до запятой и после
-    let latitude = chars2Coord[0].replace(' ', '');
-    let longitude = chars2Coord[1];
-    // удаляем лишнее
-    latitude = latitude.replace(/[ ]/g, '').replace(/\[/g, '').replace(/\]/g, '').replace(/−/g, '-');
-    longitude = longitude.replace(/[ ]/g, '').replace(/\[/g, '').replace(/\]/g, '')
-      .replace(/−/g, '-'); // console.log(checklatlon(latitude, longitude));
-    if (checklatlon(latitude, longitude) === true) {
-      return [latitude, longitude];
+    infoModal.textContent = 'есть запятая';     // console.log(valueModalInput);
+    // // исправляем координаты: удаляем лишнее и т.д.
+    const latLon = fixingItCoordinates(valueModalInput);
+    // проверяем если это координаты
+    console.log(checklatlon(latLon[0], latLon[1]));
+
+    // обязательно вернуть latitude, longitude
+    if (checklatlon(latLon[0], latLon[1]) === true) {
+      return [latLon[0], latLon[1]];
     }
     infoModal.textContent = 'не правильно введена широта и(или) долгота';
   }
